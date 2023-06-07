@@ -6,8 +6,8 @@ namespace TripRegisterNewAPI.Models
     {
         [Key]
         public int RI { get; set; }
-        public string City_in { get; set; }
-        public string Trailor_in { get; set; }
+        public string City { get; set; }
+        public string Trailor { get; set; }
         public Incoming Incoming { get; set; }
     }
 }

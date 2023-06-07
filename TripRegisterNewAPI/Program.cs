@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -8,6 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TripRegisterNewAPI.Data;
 using TripRegisterNewAPI.Models;
+using TripRegisterNewAPI.Controllers;
+using TripRegisterNewAPI.Interfaces;
+using TripRegisterNewAPI.Resporatory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,7 @@ builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseSqlServer(configuration.GetConnectionString("Connection"));
 });
 builder.Services.AddControllers();
+builder.Services.AddScoped<IncomingInterface, IncomingRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

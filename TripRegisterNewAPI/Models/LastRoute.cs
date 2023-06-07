@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TripRegisterNewAPI.Data;
 
 namespace TripRegisterNewAPI.Models
 {
