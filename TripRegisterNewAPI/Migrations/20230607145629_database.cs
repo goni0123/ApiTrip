@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TripRegisterNewAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class api : Migration
+    public partial class database : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,8 +15,7 @@ namespace TripRegisterNewAPI.Migrations
                 name: "costs",
                 columns: table => new
                 {
-                    Nalog = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nalog = table.Column<int>(type: "int", nullable: false),
                     Truck = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Driver1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Driver2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -100,22 +99,21 @@ namespace TripRegisterNewAPI.Migrations
                 name: "incoming",
                 columns: table => new
                 {
-                    Nalog_nr = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Truck = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RIT = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Start_date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    End_date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    KM = table.Column<int>(type: "int", nullable: false),
-                    Work_days = table.Column<int>(type: "int", nullable: false),
-                    Extra_Cost = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Extra_Cost_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Invoice = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Invoice_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Comment_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Check = table.Column<bool>(type: "bit", nullable: false),
-                    Driver = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Nalog_nr = table.Column<int>(type: "int", nullable: false),
+                    Truck = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RIT = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Start_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    End_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    KM = table.Column<int>(type: "int", nullable: true),
+                    Work_days = table.Column<int>(type: "int", nullable: true),
+                    Extra_Cost = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Extra_Cost_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Invoice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Invoice_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comment_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Check = table.Column<bool>(type: "bit", nullable: true),
+                    Driver = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -126,11 +124,10 @@ namespace TripRegisterNewAPI.Migrations
                 name: "inland_Driving",
                 columns: table => new
                 {
-                    Nalog_nr = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Invoice = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Invoice_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Check = table.Column<bool>(type: "bit", nullable: false)
+                    Nalog_nr = table.Column<int>(type: "int", nullable: false),
+                    Invoice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Invoice_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Check = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -155,8 +152,7 @@ namespace TripRegisterNewAPI.Migrations
                 name: "loadingOrderIn",
                 columns: table => new
                 {
-                    LoadingOrderNumber = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LoadingOrderNumber = table.Column<int>(type: "int", nullable: false),
                     AnAttn = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     VonFrom = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Company1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -174,7 +170,7 @@ namespace TripRegisterNewAPI.Migrations
                     ByOrder = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImporterOrder = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Offload = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FreightPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    FreightPrice = table.Column<decimal>(type: "decimal(18,3)", nullable: true),
                     FreightPaidBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Notice = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     REFNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -190,8 +186,7 @@ namespace TripRegisterNewAPI.Migrations
                 name: "loadingOrderOut",
                 columns: table => new
                 {
-                    LoadingOrderNumber = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LoadingOrderNumber = table.Column<int>(type: "int", nullable: false),
                     AnAttn = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     VonFrom = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Company1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -209,7 +204,7 @@ namespace TripRegisterNewAPI.Migrations
                     ByOrder = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImporterOrder = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Offload = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FreightPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    FreightPrice = table.Column<decimal>(type: "decimal(18,3)", nullable: true),
                     FreightPaidBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Notice = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     REFNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -225,8 +220,7 @@ namespace TripRegisterNewAPI.Migrations
                 name: "outgoing",
                 columns: table => new
                 {
-                    Nalog_nr = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nalog_nr = table.Column<int>(type: "int", nullable: false),
                     Truck = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RIT = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Start_date = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -274,7 +268,6 @@ namespace TripRegisterNewAPI.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {
@@ -287,13 +280,13 @@ namespace TripRegisterNewAPI.Migrations
                 {
                     LCI = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Export = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Importer = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Colli = table.Column<int>(type: "int", nullable: false),
-                    KG = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Document = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Transport_Invoice = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IncomingNalog_nr = table.Column<int>(type: "int", nullable: true)
+                    Export = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Importer = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Colli = table.Column<int>(type: "int", nullable: true),
+                    KG = table.Column<decimal>(type: "decimal(18,3)", nullable: true),
+                    Document = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Transport_Invoice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IncomingNalog_nr = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -302,7 +295,8 @@ namespace TripRegisterNewAPI.Migrations
                         name: "FK_loadingCompanyIn_incoming_IncomingNalog_nr",
                         column: x => x.IncomingNalog_nr,
                         principalTable: "incoming",
-                        principalColumn: "Nalog_nr");
+                        principalColumn: "Nalog_nr",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -311,10 +305,9 @@ namespace TripRegisterNewAPI.Migrations
                 {
                     RI = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nalog_nr_in = table.Column<int>(type: "int", nullable: false),
                     City_in = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Trailor_in = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IncomingNalog_nr = table.Column<int>(type: "int", nullable: true)
+                    IncomingNalog_nr = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -323,7 +316,8 @@ namespace TripRegisterNewAPI.Migrations
                         name: "FK_routeIn_incoming_IncomingNalog_nr",
                         column: x => x.IncomingNalog_nr,
                         principalTable: "incoming",
-                        principalColumn: "Nalog_nr");
+                        principalColumn: "Nalog_nr",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -332,21 +326,22 @@ namespace TripRegisterNewAPI.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    KM = table.Column<int>(type: "int", nullable: false),
-                    Trailor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Truck = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Inland_drivingNalog_nr = table.Column<int>(type: "int", nullable: true)
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    KM = table.Column<int>(type: "int", nullable: true),
+                    Trailor = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Truck = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    InlandNalog_nr = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_inland_Driving_More", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_inland_Driving_More_inland_Driving_Inland_drivingNalog_nr",
-                        column: x => x.Inland_drivingNalog_nr,
+                        name: "FK_inland_Driving_More_inland_Driving_InlandNalog_nr",
+                        column: x => x.InlandNalog_nr,
                         principalTable: "inland_Driving",
-                        principalColumn: "Nalog_nr");
+                        principalColumn: "Nalog_nr",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -355,13 +350,13 @@ namespace TripRegisterNewAPI.Migrations
                 {
                     LCO = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Export = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Importer = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Colli = table.Column<int>(type: "int", nullable: false),
-                    KG = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Document = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Transport_Invoice = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OutgoingNalog_nr = table.Column<int>(type: "int", nullable: true)
+                    Export = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Importer = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Colli = table.Column<int>(type: "int", nullable: true),
+                    KG = table.Column<decimal>(type: "decimal(18,3)", nullable: true),
+                    Document = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Transport_Invoice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OutgoingNalog_nr = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -370,7 +365,8 @@ namespace TripRegisterNewAPI.Migrations
                         name: "FK_loadingCompanyOut_outgoing_OutgoingNalog_nr",
                         column: x => x.OutgoingNalog_nr,
                         principalTable: "outgoing",
-                        principalColumn: "Nalog_nr");
+                        principalColumn: "Nalog_nr",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -379,9 +375,9 @@ namespace TripRegisterNewAPI.Migrations
                 {
                     RO = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Trailor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OutgoingNalog_nr = table.Column<int>(type: "int", nullable: true)
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Trailor = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OutgoingNalog_nr = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -390,19 +386,19 @@ namespace TripRegisterNewAPI.Migrations
                         name: "FK_routeOut_outgoing_OutgoingNalog_nr",
                         column: x => x.OutgoingNalog_nr,
                         principalTable: "outgoing",
-                        principalColumn: "Nalog_nr");
+                        principalColumn: "Nalog_nr",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "inland_week",
                 columns: table => new
                 {
-                    Nalog_nr = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nalog_nr = table.Column<int>(type: "int", nullable: false),
                     Invoice = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Invoice_Attachment = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Check = table.Column<bool>(type: "bit", nullable: true),
-                    WeeksID = table.Column<int>(type: "int", nullable: true)
+                    WeeksID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -411,42 +407,37 @@ namespace TripRegisterNewAPI.Migrations
                         name: "FK_inland_week_weeks_WeeksID",
                         column: x => x.WeeksID,
                         principalTable: "weeks",
-                        principalColumn: "ID");
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "inland_week_more",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Data = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    KM = table.Column<int>(type: "int", nullable: false),
-                    Trailor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Truck = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Inland_weekNalog_nr = table.Column<int>(type: "int", nullable: true),
-                    WeeksID = table.Column<int>(type: "int", nullable: true)
+                    ID = table.Column<int>(type: "int", nullable: false),
+                    Data = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    KM = table.Column<int>(type: "int", nullable: true),
+                    Trailor = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Truck = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    inland_WeekNalog_nr = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_inland_week_more", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_inland_week_more_inland_week_Inland_weekNalog_nr",
-                        column: x => x.Inland_weekNalog_nr,
+                        name: "FK_inland_week_more_inland_week_inland_WeekNalog_nr",
+                        column: x => x.inland_WeekNalog_nr,
                         principalTable: "inland_week",
-                        principalColumn: "Nalog_nr");
-                    table.ForeignKey(
-                        name: "FK_inland_week_more_weeks_WeeksID",
-                        column: x => x.WeeksID,
-                        principalTable: "weeks",
-                        principalColumn: "ID");
+                        principalColumn: "Nalog_nr",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_inland_Driving_More_Inland_drivingNalog_nr",
+                name: "IX_inland_Driving_More_InlandNalog_nr",
                 table: "inland_Driving_More",
-                column: "Inland_drivingNalog_nr");
+                column: "InlandNalog_nr");
 
             migrationBuilder.CreateIndex(
                 name: "IX_inland_week_WeeksID",
@@ -454,14 +445,9 @@ namespace TripRegisterNewAPI.Migrations
                 column: "WeeksID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_inland_week_more_Inland_weekNalog_nr",
+                name: "IX_inland_week_more_inland_WeekNalog_nr",
                 table: "inland_week_more",
-                column: "Inland_weekNalog_nr");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_inland_week_more_WeeksID",
-                table: "inland_week_more",
-                column: "WeeksID");
+                column: "inland_WeekNalog_nr");
 
             migrationBuilder.CreateIndex(
                 name: "IX_loadingCompanyIn_IncomingNalog_nr",

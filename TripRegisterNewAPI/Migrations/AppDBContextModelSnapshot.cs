@@ -24,11 +24,11 @@ namespace TripRegisterNewAPI.Migrations
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Cost", b =>
                 {
-                    b.Property<int?>("Nalog")
+                    b.Property<int>("Nalog")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Nalog"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Nalog"));
 
                     b.Property<int?>("Adblue_eu_1")
                         .HasColumnType("int");
@@ -262,55 +262,46 @@ namespace TripRegisterNewAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Nalog_nr"));
 
-                    b.Property<bool>("Check")
+                    b.Property<bool?>("Check")
                         .HasColumnType("bit");
 
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comment_Attachment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Driver")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("End_date")
+                    b.Property<DateTime?>("End_date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Extra_Cost")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Extra_Cost_Attachment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Invoice")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Invoice_Attachment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("KM")
+                    b.Property<int?>("KM")
                         .HasColumnType("int");
 
                     b.Property<string>("RIT")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Start_date")
+                    b.Property<DateTime?>("Start_date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Truck")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Work_days")
+                    b.Property<int?>("Work_days")
                         .HasColumnType("int");
 
                     b.HasKey("Nalog_nr");
@@ -326,15 +317,13 @@ namespace TripRegisterNewAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Nalog_nr"));
 
-                    b.Property<bool>("Check")
+                    b.Property<bool?>("Check")
                         .HasColumnType("bit");
 
                     b.Property<string>("Invoice")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Invoice_Attachment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Nalog_nr");
@@ -351,40 +340,37 @@ namespace TripRegisterNewAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime?>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Inland_drivingNalog_nr")
+                    b.Property<int>("InlandNalog_nr")
                         .HasColumnType("int");
 
-                    b.Property<int>("KM")
+                    b.Property<int?>("KM")
                         .HasColumnType("int");
 
                     b.Property<string>("Trailor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Truck")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("Inland_drivingNalog_nr");
+                    b.HasIndex("InlandNalog_nr");
 
                     b.ToTable("inland_Driving_More");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_week", b =>
                 {
-                    b.Property<int?>("Nalog_nr")
+                    b.Property<int>("Nalog_nr")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Nalog_nr"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Nalog_nr"));
 
                     b.Property<bool?>("Check")
                         .HasColumnType("bit");
@@ -395,7 +381,7 @@ namespace TripRegisterNewAPI.Migrations
                     b.Property<string>("Invoice_Attachment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("WeeksID")
+                    b.Property<int>("WeeksID")
                         .HasColumnType("int");
 
                     b.HasKey("Nalog_nr");
@@ -414,34 +400,26 @@ namespace TripRegisterNewAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Data")
+                    b.Property<DateTime?>("Data")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Inland_weekNalog_nr")
-                        .HasColumnType("int");
-
-                    b.Property<int>("KM")
+                    b.Property<int?>("KM")
                         .HasColumnType("int");
 
                     b.Property<string>("Trailor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Truck")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("WeeksID")
+                    b.Property<int>("inland_WeekNalog_nr")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("Inland_weekNalog_nr");
-
-                    b.HasIndex("WeeksID");
+                    b.HasIndex("inland_WeekNalog_nr");
 
                     b.ToTable("inland_week_more");
                 });
@@ -475,29 +453,25 @@ namespace TripRegisterNewAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LCI"));
 
-                    b.Property<int>("Colli")
+                    b.Property<int?>("Colli")
                         .HasColumnType("int");
 
                     b.Property<string>("Document")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Export")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Importer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("IncomingNalog_nr")
+                    b.Property<int>("IncomingNalog_nr")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("KG")
+                    b.Property<decimal?>("KG")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Transport_Invoice")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LCI");
@@ -515,29 +489,25 @@ namespace TripRegisterNewAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LCO"));
 
-                    b.Property<int>("Colli")
+                    b.Property<int?>("Colli")
                         .HasColumnType("int");
 
                     b.Property<string>("Document")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Export")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Importer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("KG")
+                    b.Property<decimal?>("KG")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("OutgoingNalog_nr")
+                    b.Property<int>("OutgoingNalog_nr")
                         .HasColumnType("int");
 
                     b.Property<string>("Transport_Invoice")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LCO");
@@ -549,11 +519,11 @@ namespace TripRegisterNewAPI.Migrations
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingOrderIn", b =>
                 {
-                    b.Property<int?>("LoadingOrderNumber")
+                    b.Property<int>("LoadingOrderNumber")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("LoadingOrderNumber"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoadingOrderNumber"));
 
                     b.Property<string>("AnAttn")
                         .HasColumnType("nvarchar(max)");
@@ -631,11 +601,11 @@ namespace TripRegisterNewAPI.Migrations
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingOrderOut", b =>
                 {
-                    b.Property<int?>("LoadingOrderNumber")
+                    b.Property<int>("LoadingOrderNumber")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("LoadingOrderNumber"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoadingOrderNumber"));
 
                     b.Property<string>("AnAttn")
                         .HasColumnType("nvarchar(max)");
@@ -713,11 +683,11 @@ namespace TripRegisterNewAPI.Migrations
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Outgoing", b =>
                 {
-                    b.Property<int?>("Nalog_nr")
+                    b.Property<int>("Nalog_nr")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Nalog_nr"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Nalog_nr"));
 
                     b.Property<bool?>("Check")
                         .HasColumnType("bit");
@@ -778,10 +748,7 @@ namespace TripRegisterNewAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("IncomingNalog_nr")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Nalog_nr_in")
+                    b.Property<int>("IncomingNalog_nr")
                         .HasColumnType("int");
 
                     b.Property<string>("Trailor_in")
@@ -804,12 +771,14 @@ namespace TripRegisterNewAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RO"));
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OutgoingNalog_nr")
+                    b.Property<int>("OutgoingNalog_nr")
                         .HasColumnType("int");
 
                     b.Property<string>("Trailor")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("RO");
@@ -854,55 +823,79 @@ namespace TripRegisterNewAPI.Migrations
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_driving_more", b =>
                 {
-                    b.HasOne("TripRegisterNewAPI.Models.Inland_driving", null)
+                    b.HasOne("TripRegisterNewAPI.Models.Inland_driving", "Inland")
                         .WithMany("inland_Driving_More")
-                        .HasForeignKey("Inland_drivingNalog_nr");
+                        .HasForeignKey("InlandNalog_nr")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Inland");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_week", b =>
                 {
-                    b.HasOne("TripRegisterNewAPI.Models.Weeks", null)
-                        .WithMany("inland_Week")
-                        .HasForeignKey("WeeksID");
+                    b.HasOne("TripRegisterNewAPI.Models.Weeks", "Weeks")
+                        .WithMany("Inland_week")
+                        .HasForeignKey("WeeksID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Weeks");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_week_more", b =>
                 {
-                    b.HasOne("TripRegisterNewAPI.Models.Inland_week", null)
+                    b.HasOne("TripRegisterNewAPI.Models.Inland_week", "inland_Week")
                         .WithMany("inland_Week_More")
-                        .HasForeignKey("Inland_weekNalog_nr");
+                        .HasForeignKey("inland_WeekNalog_nr")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("TripRegisterNewAPI.Models.Weeks", null)
-                        .WithMany("inland_Week_more")
-                        .HasForeignKey("WeeksID");
+                    b.Navigation("inland_Week");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingCompanyIn", b =>
                 {
-                    b.HasOne("TripRegisterNewAPI.Models.Incoming", null)
+                    b.HasOne("TripRegisterNewAPI.Models.Incoming", "Incoming")
                         .WithMany("LoadingCompanyIn")
-                        .HasForeignKey("IncomingNalog_nr");
+                        .HasForeignKey("IncomingNalog_nr")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Incoming");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingCompanyOut", b =>
                 {
-                    b.HasOne("TripRegisterNewAPI.Models.Outgoing", null)
+                    b.HasOne("TripRegisterNewAPI.Models.Outgoing", "Outgoing")
                         .WithMany("loadingCompanyOut")
-                        .HasForeignKey("OutgoingNalog_nr");
+                        .HasForeignKey("OutgoingNalog_nr")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Outgoing");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.RouteIn", b =>
                 {
-                    b.HasOne("TripRegisterNewAPI.Models.Incoming", null)
+                    b.HasOne("TripRegisterNewAPI.Models.Incoming", "Incoming")
                         .WithMany("routeIn")
-                        .HasForeignKey("IncomingNalog_nr");
+                        .HasForeignKey("IncomingNalog_nr")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Incoming");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.RouteOut", b =>
                 {
-                    b.HasOne("TripRegisterNewAPI.Models.Outgoing", null)
+                    b.HasOne("TripRegisterNewAPI.Models.Outgoing", "Outgoing")
                         .WithMany("routeOut")
-                        .HasForeignKey("OutgoingNalog_nr");
+                        .HasForeignKey("OutgoingNalog_nr")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Outgoing");
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Incoming", b =>
@@ -931,9 +924,7 @@ namespace TripRegisterNewAPI.Migrations
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Weeks", b =>
                 {
-                    b.Navigation("inland_Week");
-
-                    b.Navigation("inland_Week_more");
+                    b.Navigation("Inland_week");
                 });
 #pragma warning restore 612, 618
         }

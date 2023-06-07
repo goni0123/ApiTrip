@@ -5,7 +5,7 @@ namespace TripRegisterNewAPI.Models
     public class Outgoing
     {
         [Key]
-        public int? Nalog_nr { set; get; }
+        public int Nalog_nr { set; get; }
         public string? Truck { set; get; }
         public string? RIT { set; get; }
         public DateTime? Start_date { set; get; }

@@ -12,7 +12,7 @@ namespace TripRegisterNewAPI.Models
         public string? Phone2Number { get; set; }
         public string? Email { get; set; }
         [Key]
-        public int? LoadingOrderNumber { get; set; }
+        public int LoadingOrderNumber { get; set; }
         public string? TruckPlate { get; set; }
         public string? DriverOrder { get; set; }
         public DateTime? LoadingDate { get; set; }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Goni_\\Desktop\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj": {}
+    "C:\\Users\\Goni_\\OneDrive\\Documents\\GitHub\\ApiTrip\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Goni_\\Desktop\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj": {
+    "C:\\Users\\Goni_\\OneDrive\\Documents\\GitHub\\ApiTrip\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Goni_\\Desktop\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Goni_\\OneDrive\\Documents\\GitHub\\ApiTrip\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj",
         "projectName": "TripRegisterNewAPI",
-        "projectPath": "C:\\Users\\Goni_\\Desktop\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj",
+        "projectPath": "C:\\Users\\Goni_\\OneDrive\\Documents\\GitHub\\ApiTrip\\TripRegisterNewAPI\\TripRegisterNewAPI.csproj",
         "packagesPath": "C:\\Users\\Goni_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Goni_\\Desktop\\TripRegisterNewAPI\\obj\\",
+        "outputPath": "C:\\Users\\Goni_\\OneDrive\\Documents\\GitHub\\ApiTrip\\TripRegisterNewAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
