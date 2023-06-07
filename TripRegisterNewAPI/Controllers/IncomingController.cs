@@ -18,10 +18,22 @@ namespace TripRegisterNewAPI.Controllers
         [ProducesResponseType(200,Type = typeof(IEnumerable<Incoming>))]
         public IActionResult GetIncoming()
         {
-            var incomings=_incomingInterface.GetIncoming();
+            var incomings=_incomingInterface.GetIncomings();
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             return Ok(incomings);
+        }
+        [HttpGet("{id}")]
+        [ProducesResponseType(200,Type=typeof(Incoming))]
+        [ProducesResponseType(400)]
+        public IActionResult GetIncoming(int id)
+        {
+            if(!_incomingInterface.IncomingExists(id))
+                return NotFound();
+            var incoming= _incomingInterface.GetIncoming(id);   
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Ok(incoming);
         }
     }
 }
