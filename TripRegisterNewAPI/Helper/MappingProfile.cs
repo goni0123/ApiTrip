@@ -17,6 +17,8 @@ namespace TripRegisterNewAPI.Helper
             CreateMap<Cost,CostDto>();
             CreateMap<LoadingOrderIn, LoadingOrderInDto>();
             CreateMap<LoadingOrderOut, LoadingOrderOutDto>();
+            CreateMap<Inland_driving,InlandDto>();
+            CreateMap<Inland_driving_more,InlandMoreDto>();
         }
     }
 }

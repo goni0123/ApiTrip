@@ -10,6 +10,5 @@ namespace TripRegisterNewAPI.Dto
         public decimal? KG { get; set; }
         public string? Document { get; set; }
         public string? Transport_Invoice { get; set; }
-        public Incoming Incoming { get; set; }
     }
 }

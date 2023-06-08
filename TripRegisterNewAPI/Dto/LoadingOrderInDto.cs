@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace TripRegisterNewAPI.Dto
+﻿namespace TripRegisterNewAPI.Dto
 {
     public class LoadingOrderInDto
     {
@@ -11,8 +9,6 @@ namespace TripRegisterNewAPI.Dto
         public string? Phone1Number { get; set; }
         public string? Phone2Number { get; set; }
         public string? Email { get; set; }
-
-        [Key]
         public int LoadingOrderNumber { get; set; }
         
         public string? TruckPlate { get; set; }
