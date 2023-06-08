@@ -22,7 +22,7 @@ namespace TripRegisterNewAPI.Controllers
         }
         [HttpGet]
         [ProducesResponseType(200,Type = typeof(IEnumerable<Incoming>))]
-        public IActionResult GetIncoming()
+        public IActionResult GetIncomings()
         {
             var incomings=_mapper.Map<List<IncomingDto>>(_incomingInterface.GetIncomings());
             

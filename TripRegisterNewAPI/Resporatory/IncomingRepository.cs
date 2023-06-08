@@ -14,7 +14,7 @@ namespace TripRegisterNewAPI.Resporatory
         }
         public Incoming GetIncoming(int id)
         {
-            return _context.incoming.Where(i => i.Nalog_nr == id).FirstOrDefault();
+            return _context.incoming.Where(i => i.Nalog_nr == id).FirstOrDefault() ?? null;
         }
         public bool IncomingExists(int id)
         {
