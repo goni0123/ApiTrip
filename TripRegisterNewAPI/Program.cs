@@ -29,6 +29,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IncomingInterface, IncomingRepository>();
 builder.Services.AddScoped<OutgoingInterface,OutgoingRepository>();
 builder.Services.AddScoped<CostInterface, CostRepository>();
+builder.Services.AddScoped<LoadingOrderInInterface, LoadingOrderInRepository>();
+builder.Services.AddScoped<LoadingOrderOutInterface, LoadingOrderOutRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

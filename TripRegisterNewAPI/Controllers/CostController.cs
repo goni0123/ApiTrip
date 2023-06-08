@@ -33,6 +33,8 @@ namespace TripRegisterNewAPI.Controllers
         [ProducesResponseType(400)]
         public IActionResult GetCost(int id)
         {
+            if (!_costInterface.CostExists(id))
+                return NotFound();
             var cost= _mapper.Map<CostDto>(_costInterface.GetCost(id));
 
             if(!ModelState.IsValid)
