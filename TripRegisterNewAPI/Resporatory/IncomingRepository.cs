@@ -20,5 +20,15 @@ namespace TripRegisterNewAPI.Resporatory
         {
             return _context.incoming.Any(i=>i.Nalog_nr==id);
         }
+
+        public ICollection<RouteIn> GetRouteById(int incomingid)
+        {
+            return _context.routeIn.Where(r => r.Incoming.Nalog_nr == incomingid).OrderBy(r=>r.RI).ToList();
+        }
+
+        public ICollection<LoadingCompanyIn> GetLoadingById(int incomingid)
+        {
+            return _context.loadingCompanyIn.Where(l => l.Incoming.Nalog_nr == incomingid).OrderByDescending(l=>l.LCI).ToList();
+        }
     }
 }

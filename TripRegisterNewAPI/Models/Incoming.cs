@@ -21,8 +21,8 @@ namespace TripRegisterNewAPI.Models
         public string? Comment_Attachment { set; get; }
         public bool? Check { set; get; }
         public string? Driver { set; get; }
-        public ICollection<LoadingCompanyIn> LoadingCompanyIn { get; set; }
-        public ICollection<RouteIn> routeIn { set; get; }
+        public ICollection<LoadingCompanyIn> LoadingCompany { get; set; }
+        public ICollection<RouteIn> route { set; get; }
 
     }
 }

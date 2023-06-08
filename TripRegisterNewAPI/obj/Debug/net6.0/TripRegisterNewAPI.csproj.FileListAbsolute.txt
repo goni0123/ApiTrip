@@ -596,3 +596,5 @@ C:\Users\Goni_\OneDrive\Documents\GitHub\ApiTrip\TripRegisterNewAPI\obj\Debug\ne
 C:\Users\Goni_\OneDrive\Documents\GitHub\ApiTrip\TripRegisterNewAPI\obj\Debug\net6.0\TripRegisterNewAPI.pdb
 C:\Users\Goni_\OneDrive\Documents\GitHub\ApiTrip\TripRegisterNewAPI\obj\Debug\net6.0\TripRegisterNewAPI.genruntimeconfig.cache
 C:\Users\Goni_\OneDrive\Documents\GitHub\ApiTrip\TripRegisterNewAPI\obj\Debug\net6.0\ref\TripRegisterNewAPI.dll
+C:\Users\Goni_\OneDrive\Documents\GitHub\ApiTrip\TripRegisterNewAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Goni_\OneDrive\Documents\GitHub\ApiTrip\TripRegisterNewAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
