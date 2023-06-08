@@ -14,6 +14,7 @@ namespace TripRegisterNewAPI.Helper
             CreateMap<Outgoing, OutgoingDto>();
             CreateMap<RouteOut, RouteOutDto>();
             CreateMap<LoadingCompanyOut, LoadingCompanyOutDto>();
+            CreateMap<Cost,CostDto>();
         }
     }
 }
