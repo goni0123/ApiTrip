@@ -19,6 +19,7 @@ namespace TripRegisterNewAPI.Helper
             CreateMap<LoadingOrderOut, LoadingOrderOutDto>();
             CreateMap<Inland_driving,InlandDto>();
             CreateMap<Inland_driving_more,InlandMoreDto>();
+            CreateMap<LastRoute,LastRouteDto>();
         }
     }
 }
