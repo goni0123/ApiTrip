@@ -20,6 +20,9 @@ namespace TripRegisterNewAPI.Helper
             CreateMap<Inland_driving,InlandDto>();
             CreateMap<Inland_driving_more,InlandMoreDto>();
             CreateMap<LastRoute,LastRouteDto>();
+            CreateMap<Weeks, WeekDto>();
+            CreateMap<Inland_week,Inland_WeekDto>();
+            CreateMap<Inland_week_more,Inland_Week_MoreDto>();
         }
     }
 }

@@ -251,7 +251,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("Nalog");
 
-                    b.ToTable("costs");
+                    b.ToTable("costs", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Incoming", b =>
@@ -306,7 +306,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("Nalog_nr");
 
-                    b.ToTable("incoming");
+                    b.ToTable("incoming", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_driving", b =>
@@ -328,7 +328,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("Nalog_nr");
 
-                    b.ToTable("inland_Driving");
+                    b.ToTable("inland_Driving", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_driving_more", b =>
@@ -361,7 +361,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasIndex("InlandNalog_nr");
 
-                    b.ToTable("inland_Driving_More");
+                    b.ToTable("inland_Driving_More", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_week", b =>
@@ -388,7 +388,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasIndex("WeeksID");
 
-                    b.ToTable("inland_week");
+                    b.ToTable("inland_week", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_week_more", b =>
@@ -421,7 +421,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasIndex("inland_WeekNalog_nr");
 
-                    b.ToTable("inland_week_more");
+                    b.ToTable("inland_week_more", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LastRoute", b =>
@@ -442,7 +442,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("Last_route");
 
-                    b.ToTable("lastRoute");
+                    b.ToTable("lastRoute", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingCompanyIn", b =>
@@ -478,7 +478,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasIndex("IncomingNalog_nr");
 
-                    b.ToTable("loadingCompanyIn");
+                    b.ToTable("loadingCompanyIn", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingCompanyOut", b =>
@@ -514,7 +514,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasIndex("OutgoingNalog_nr");
 
-                    b.ToTable("loadingCompanyOut");
+                    b.ToTable("loadingCompanyOut", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingOrderIn", b =>
@@ -596,7 +596,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("LoadingOrderNumber");
 
-                    b.ToTable("loadingOrderIn");
+                    b.ToTable("loadingOrderIn", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.LoadingOrderOut", b =>
@@ -678,7 +678,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("LoadingOrderNumber");
 
-                    b.ToTable("loadingOrderOut");
+                    b.ToTable("loadingOrderOut", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Outgoing", b =>
@@ -733,7 +733,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("Nalog_nr");
 
-                    b.ToTable("outgoing");
+                    b.ToTable("outgoing", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.RouteIn", b =>
@@ -759,7 +759,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasIndex("IncomingNalog_nr");
 
-                    b.ToTable("routeIn");
+                    b.ToTable("routeIn", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.RouteOut", b =>
@@ -785,7 +785,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasIndex("OutgoingNalog_nr");
 
-                    b.ToTable("routeOut");
+                    b.ToTable("routeOut", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Trailor", b =>
@@ -795,7 +795,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("trailor");
 
-                    b.ToTable("trailors");
+                    b.ToTable("trailors", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Truck", b =>
@@ -805,7 +805,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("truck");
 
-                    b.ToTable("trucks");
+                    b.ToTable("trucks", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Weeks", b =>
@@ -818,7 +818,7 @@ namespace TripRegisterNewAPI.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("weeks");
+                    b.ToTable("weeks", (string)null);
                 });
 
             modelBuilder.Entity("TripRegisterNewAPI.Models.Inland_driving_more", b =>
