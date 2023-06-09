@@ -37,6 +37,7 @@ builder.Services.AddScoped<WeekInterface, WeekRepository>();
 builder.Services.AddScoped<TruckInterface,TruckRepository>();
 builder.Services.AddScoped<TrailorInterface, TrailorRepository>();
 builder.Services.AddScoped<CompanyInInterface,CompanyInRepository>();
+builder.Services.AddScoped<RouteInInterface, RouteInRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
