@@ -30,5 +30,29 @@ namespace TripRegisterNewAPI.Resporatory
         {
             return _context.loadingCompanyIn.Where(l => l.Incoming.Nalog_nr == incomingid).OrderByDescending(l=>l.LCI).ToList();
         }
+
+        public bool CreateIncoming(Incoming incoming)
+        {
+            _context.Add(incoming);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
+
+        public bool CreateRouteIn(RouteIn routeIn)
+        {
+            _context.Add(routeIn);
+            return Save();
+        }
+
+        public bool CreateCompanyIn(LoadingCompanyIn loadingCompanyIn)
+        {
+            _context.Add(loadingCompanyIn);
+            return Save();
+        }
     }
 }

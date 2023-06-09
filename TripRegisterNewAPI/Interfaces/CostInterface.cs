@@ -7,5 +7,7 @@ namespace TripRegisterNewAPI.Interfaces
         ICollection<Cost> GetCosts();
         Cost GetCost(int id);
         bool CostExists(int id);
+        bool CreateCost(Cost cost);
+        bool Save();
     }
 }

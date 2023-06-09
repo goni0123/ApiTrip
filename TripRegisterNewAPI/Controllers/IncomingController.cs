@@ -78,5 +78,34 @@ namespace TripRegisterNewAPI.Controllers
             var routeDtos = _mapper.Map<List<LoadingCompanyInDto>>(loading);
             return Ok(routeDtos);
         }
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public IActionResult CreateIncoming([FromBody] IncomingDto incomingCreate)
+        {
+            if (incomingCreate == null)
+                return BadRequest(ModelState);
+            var incomings = _incomingInterface.GetIncomings()
+                .Where(c => c.Nalog_nr == incomingCreate.Nalog_nr)
+                .FirstOrDefault();
+            if (incomings != null)
+            {
+                ModelState.AddModelError("", "Incoming exists");
+                return StatusCode(442, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var incomingMap = _mapper.Map<Incoming>(incomingCreate);
+
+            if (!_incomingInterface.CreateIncoming(incomingMap))
+            {
+                ModelState.AddModelError("", "Somthing went wrong while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Saved Successfully");
+        }
     }
 }

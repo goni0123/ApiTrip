@@ -22,5 +22,17 @@ namespace TripRegisterNewAPI.Resporatory
         {
             return _context.costs.Any(c => c.Nalog == id);
         }
+
+        public bool CreateCost(Cost cost)
+        {
+            _context.Add(cost);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
     }
 }

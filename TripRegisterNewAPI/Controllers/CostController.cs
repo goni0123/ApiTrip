@@ -41,5 +41,34 @@ namespace TripRegisterNewAPI.Controllers
                 return BadRequest(ModelState);
             return Ok(cost);
         }
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public IActionResult CreateCost([FromBody]CostDto costCreate)
+        {
+            if(costCreate == null)
+                return BadRequest(ModelState);
+            var costs = _costInterface.GetCosts()
+                .Where(c=>c.Nalog== costCreate.Nalog)
+                .FirstOrDefault();
+            if (costs != null)
+            {
+                ModelState.AddModelError("", "Cost exists");
+                return StatusCode(442, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var costMap = _mapper.Map<Cost>(costCreate);
+
+            if (!_costInterface.CreateCost(costMap))
+            {
+                ModelState.AddModelError("", "Somthing went wrong while saving");
+                return StatusCode(500,ModelState);
+            }
+
+            return Ok("Saved Successfully");
+        }
     }
 }
